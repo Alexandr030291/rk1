@@ -64,9 +64,12 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Bit
         mRequestId = 0;
         BitCointy bitCointy = Storage.getInstance(getApplicationContext()).getLastSavedBitCointy();
         if (bitCointy!=null) {
-            textTextResult.setText(String.valueOf(bitCointy.getValue()));
+            final String currency = bitCointy.getCurrency();
+            final String result = String.valueOf(bitCointy.getValue());
+            final String value = String.valueOf(Storage.getInstance(getApplicationContext()).getLastSavedValue());
+            textTextResult.setText(value+" "+currency+" = "+result+" Bincointy");
         }else {
-            textTextResult.setText("0");
+            textTextResult.setText("ERROR");
         }
     }
 }
