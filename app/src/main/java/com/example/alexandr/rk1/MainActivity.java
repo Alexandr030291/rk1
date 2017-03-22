@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Bit
     protected void onStart(){
         super.onStart();
         newRequestID();
+        onBitCointyResult(true);
     }
 
     @Override
