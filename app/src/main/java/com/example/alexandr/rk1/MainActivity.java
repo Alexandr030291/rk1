@@ -44,9 +44,12 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Bit
         findViewById(R.id.settings).setOnClickListener(onSettings);
         findViewById(R.id.update).setOnClickListener(onUpdate);
 
-        //default option
+        //default option for first start
         if (Storage.getInstance(this).loadCurrentCurrency().isEmpty()) {
             Storage.getInstance(this).saveCurrentCurrency(Currency.USD);
+        }
+        if (Storage.getInstance(this).getLastSavedValue()==null) {
+            Storage.getInstance(this).saveValue(0.0);
         }
     }
 
