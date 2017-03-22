@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
+import java.util.concurrent.CyclicBarrier;
+
 
 public class BitCoinIntentService extends IntentService {
     public final  static String ACTION_BITCOINTY = "action.BITCOINTY";
